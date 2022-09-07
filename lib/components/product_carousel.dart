@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommer_app/components/card_product.dart';
-import 'package:flutter_ecommer_app/model/ProductModel.dart';
+import 'package:flutter_ecommer_app/model/product_model.dart';
 class ProductCarousel extends StatelessWidget {
   final List<ProductModel> products;
   const ProductCarousel({

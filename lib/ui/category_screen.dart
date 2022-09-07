@@ -3,7 +3,7 @@ import 'package:flutter_ecommer_app/components/card_product.dart';
 import 'package:flutter_ecommer_app/components/custom_app_bar.dart';
 import 'package:flutter_ecommer_app/components/custom_navigation_bar.dart';
 import 'package:flutter_ecommer_app/components/product_carousel.dart';
-import 'package:flutter_ecommer_app/model/ProductModel.dart';
+import 'package:flutter_ecommer_app/model/product_model.dart';
 import 'package:flutter_ecommer_app/model/category_model.dart';
 
 class CategoryScreen extends StatelessWidget {

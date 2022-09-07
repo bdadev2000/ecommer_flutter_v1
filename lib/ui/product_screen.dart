@@ -4,7 +4,7 @@ import 'package:flutter_ecommer_app/components/custom_app_bar.dart';
 import 'package:flutter_ecommer_app/components/custom_navigation_bar.dart';
 import 'package:flutter_ecommer_app/components/hero_category_card.dart';
 import 'package:flutter_ecommer_app/components/product_carousel.dart';
-import 'package:flutter_ecommer_app/model/ProductModel.dart';
+import 'package:flutter_ecommer_app/model/product_model.dart';
 
 class ProductScreen extends StatelessWidget {
   final ProductModel product;
