@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommer_app/core/route.dart';
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
   final String title;
   const CustomAppBar({
@@ -18,13 +19,15 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
           style: TextStyle(color: Colors.white),
         ),
       ),
-      leading: IconButton(
-        onPressed: () {},
-        icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,),
-      ),
+      // leading: IconButton(
+      //   onPressed: () {},
+      //   icon: Icon(Icons.arrow_back_ios_new,color: Colors.black,),
+      // ),
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, Routes.favourite_screen);
+          },
           icon: Icon(Icons.favorite_border,color: Colors.black,),
         ),
       ],

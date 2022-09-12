@@ -4,6 +4,7 @@ import 'package:flutter_ecommer_app/model/product_model.dart';
 import 'package:flutter_ecommer_app/model/category_model.dart';
 import 'package:flutter_ecommer_app/ui/cart_screen.dart';
 import 'package:flutter_ecommer_app/ui/category_screen.dart';
+import 'package:flutter_ecommer_app/ui/favourite_screen.dart';
 import 'package:flutter_ecommer_app/ui/home_screen.dart';
 import 'package:flutter_ecommer_app/ui/product_screen.dart';
 
@@ -14,6 +15,7 @@ class Routes{
   static const String cart_screen = '/cart';
   static const String category_screen = '/category';
   static const String product_screen = '/product';
+  static const String favourite_screen = '/favourite';
 
   static var routes = {
     home:(context) => HomeScreen(),
@@ -26,6 +28,8 @@ class Routes{
     product_screen:(context){
       final args = ModalRoute.of(context)?.settings.arguments as ProductModel;
       return ProductScreen(product: args);
-    }
+    },
+
+    favourite_screen:(context) => FavouriteScreen(),
   };
 }

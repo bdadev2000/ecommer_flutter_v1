@@ -16,7 +16,7 @@ class ProductCarousel extends StatelessWidget {
         shrinkWrap: true,
         itemBuilder: (context,index){
           final ProductModel item =products[index];
-          return CardProduct(product: item);
+          return CardProduct(product: item, withFactory: 2.2,);
         },
         itemCount: products.length,
       ),

@@ -1,9 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_ecommer_app/bloc/favourite/favourite_bloc.dart';
 import 'package:flutter_ecommer_app/components/custom_app_bar.dart';
-import 'package:flutter_ecommer_app/components/custom_navigation_bar.dart';
 import 'package:flutter_ecommer_app/components/hero_category_card.dart';
-import 'package:flutter_ecommer_app/components/product_carousel.dart';
+import 'package:flutter_ecommer_app/model/favourite_model.dart';
 import 'package:flutter_ecommer_app/model/product_model.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -21,22 +22,36 @@ class ProductScreen extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            IconButton(onPressed: (){
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.share,
+                  color: Colors.white,
+                )),
+            BlocBuilder<FavouriteBloc, FavouriteState>(
+                builder: (context, state) {
+              return IconButton(
+                  onPressed: () {
+                    context
+                        .read<FavouriteBloc>()
+                        .add(AddFavouriteProduct(product));
 
-            }, icon: Icon(Icons.share,color: Colors.white,)),
-            IconButton(onPressed: (){
-
-            }, icon: Icon(Icons.favorite,color: Colors.white)),
+                    final snackBar = SnackBar(content: Text("Added to your favourite list"));
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  },
+                  icon: Icon(Icons.favorite, color: Colors.white));
+            }),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 8,vertical: 8),
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(4),
               ),
-              child: Text("ADD TO CART",style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.black
-              ),),
+              child: Text(
+                "ADD TO CART",
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+              ),
             )
           ],
         ),
@@ -91,7 +106,8 @@ class ProductScreen extends StatelessWidget {
               title: Text('Product Infomation'),
               children: [
                 ListTile(
-                  title: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'),
+                  title: Text(
+                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'),
                 ),
               ],
             ),
@@ -103,7 +119,8 @@ class ProductScreen extends StatelessWidget {
               title: Text('Delivery Infomation'),
               children: [
                 ListTile(
-                  title: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'),
+                  title: Text(
+                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'),
                 ),
               ],
             ),
